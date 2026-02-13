@@ -1,7 +1,3 @@
-
-<!DOCTYPE html>
-
-<html>
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -32,23 +28,103 @@
                 font-family: var(--site-font) !important;
             }
         </style>
-</head>
-<body class="theme-1">
-<div id="wrapper">
-<div data-src="header.html" id="header"></div>
-<div id="mainPageContent">
-<div id="middle_section_default">
+<style id="aiModalSpinnerStyles">
+        .ai-modal-content {
+            position: relative;
+        }
+
+        /* Overlay blocks everything */
+        .ai-modal-spinner {
+            position: absolute;
+            inset: 0;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 20;
+            backdrop-filter: blur(1.5px);
+            pointer-events: auto; /* blocks modal */
+        }
+
+        /* Spinner itself should NOT intercept clicks */
+        .ai-modal-spinner * {
+            pointer-events: none;
+        }
+
+        /* Close button MUST be above overlay */
+        .ai-close {
+            align-self: flex-start;
+            margin-right: auto; /* push left */
+            margin-left: 0;
+            z-index: 30;
+        }
+
+
+        /* Spinner styling */
+        .ai-spinner {
+            width: 42px;
+            height: 42px;
+            border: 4px solid rgba(0,0,0,0.25);
+            border-top-color: #000;
+            border-radius: 50%;
+            animation: aiSpin 0.9s linear infinite;
+        }
+
+        @keyframes aiSpin {
+            to { transform: rotate(360deg); }
+        }
+
+    </style><style>
+.curtain-overlay {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  pointer-events: none;
+  z-index: 2;
+}
+</style></head>
+<body class="theme-1" style="">
+<div class="editableSection" id="wrapper" style="pointer-events: auto;">
+<div class="" data-src="header.html" id="header"></div>
+<div class="" id="mainPageContent">
+<div class="" id="middle_section_default">
 <article class="container text-info-block">
 <div class="row">
 <div class="col-xs-12" style="text-align: center;">
-<h2>Please add middle section</h2><br/>
+<h2 class="">Please add middle section</h2><br class=""/>
 <button class="custombtn" id="AddNewSection">Add Sections</button>
 </div>
 </div>
 </article>
 </div>
+<section class="section-wrapper home-9 effect pop-in animate" id="section-nwvuxoc7vil">
+<div class="container-fluid">
+<div class="row home-9-flex">
+<!-- Left Column -->
+<div class="col-sm-6 col-xs-12 home-9-left">
+<div class="home-9-content">
+<p class="home-9-subtitle">WHO WE ARE</p>
+<h1 class="home-9-title">Enduring Memories<br/>&amp; Perfect Comfort</h1>
+<p class="home-9-description">
+						Soluta nobis est eligendi optio cumque nihil impedit quo minus id quor facere possimus, omnis
+						voluptas assumenda est, omnis dolor repellend autem quibusdam et aut officiis debitis.
+					</p>
+<a class="btn btn-primary home-9-btn" href="#" style="cursor: pointer;">
+						Reservation <span class="glyphicon glyphicon-arrow-right"></span>
+</a>
 </div>
-<div data-src="footer.html" id="footer"></div>
+</div>
+<!-- Right Column with background image -->
+<div class="col-sm-6 col-xs-12 home-9-right" style="background-image: url('assets/images/home-9.jpg'); background-size: cover; background-position: center;">
+</div>
+</div>
+</div>
+</section></div>
+<div class="" data-src="footer.html" id="footer"></div>
 </div>
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/init.js"></script>
@@ -103,5 +179,11 @@
             </script>
 <script src="assets/js/middle-section.js"></script>
 <script src="assets/js/common_js/image_uploader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="/assets/js/custom/editmode.js"></script>
+<script src="/assets/ai_model_bridge.js" type="module"></script>
+<script src="/assets/js/custom/main.js"></script>
+<script src="/assets/js/custom/editModeScript.js"></script>
+<form enctype="multipart/form-data" id="imgForm" method="post"><input class="hidden formFieldFileName" name="imgFileName" type="text" value=""/><input accept="image/*" class="hidden" id="image-upload" name="imgFile" type="file"/><input class="hidden formFieldFileName" name="imgFileName" type="text" value=""/></form><form class="hidden" enctype="multipart/form-data" id="imgForm" method="post"></form>
 </body>
-</html>
