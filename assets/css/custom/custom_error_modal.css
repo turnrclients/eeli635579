@@ -1,0 +1,86 @@
+.modal.custom-alert-modal {
+    z-index: 99998;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Backdrop */
+.modal-backdrop.custom-alert-backdrop,
+.modal-backdrop.custom-alert-backdrop.in,
+.modal-backdrop.custom-alert-backdrop.show {
+    background-color: #000;
+    opacity: 0.6;
+}
+
+
+
+.custom-alert-modal .modal-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -60%);
+    opacity: 0;
+
+    width: 100%;
+    max-width: 420px;
+    margin: 0;
+
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* Bootstrap 3 (visible state) */
+.custom-alert-modal.in .modal-dialog {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+/* Bootstrap 5 (visible state) */
+.custom-alert-modal.show .modal-dialog {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+
+.custom-alert-modal .modal-content {
+    border-radius: 14px;
+    border: none;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+}
+
+/* Body */
+.custom-alert-modal .modal-body {
+    padding: 30px 26px;
+    text-align: center;
+}
+
+/* Message */
+.custom-alert-modal .alert-message {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.custom-alert-modal.success .alert-message {
+    color: #28a745;
+}
+
+.custom-alert-modal.error .alert-message {
+    color: #dc3545;
+}
+
+/* OK Button */
+.custom-alert-modal .alert-ok-btn {
+    background: linear-gradient(135deg, #e39a4e, #fb1b1b);
+    color: #fff !important;
+    border: none;
+    padding: 10px 36px;
+    border-radius: 230px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.custom-alert-modal .alert-ok-btn:hover {
+    opacity: 0.9;
+}
